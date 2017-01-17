@@ -1,0 +1,18 @@
+require.config({
+    baseUrl:'./js',
+    paths:{
+      'jquery':'plugins/jquery-3.1.1.min',
+      'bootstrap':'plugins/bootstrap.min',
+      'bootstrapSelect':'plugins/bootstrap-select',
+      'Ajax':'package/ajaxPakage',
+      'selectList':'package/selectPakage'
+    },
+    shim:{
+      'bootstrap':{
+        deps:['jquery']
+      },
+      'bootstrapSelect':{
+        deps:['bootstrap']
+      }
+    }
+});

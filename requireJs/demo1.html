@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>demo1</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container" ng-app="formApp">
+        <div class="row" style="margin-top:50px;">
+            <div class="col-xs-2"></div>
+            <div class="col-xs-8">
+                <form class="form-horizontal" role="form" ng-controller="formControl">
+                    <div class="form-group">
+                        <label for="inputName" class="col-xs-2 control-label">姓名</label>
+                        <div class="col-xs-10">
+                            <input type="text" class="form-control" id="inputName" placehoder="姓名" ng-model="name"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPaw" class="col-xs-2 control-label">密码</label>
+                        <div class="col-xs-10">
+                            <input type="text" class="form-control" id="inputPaw" placehoder="姓名" ng-model="paw"/>
+                        </div>
+                    </div>
+                </form>
+                <div xiaoming></div>
+                <ul ng-controller="conUL">
+                    <li>{{theTime}}</li>
+                    <li>
+                        <p>输入过滤:</p>
+                        <p><input type="text" ng-model="test"></p>
+                    </li>
+                    <li ng-repeat="x in names | filter:test | orderBy:'country'">
+                        {{x.name + ',' + x.country | uppercase}}
+                    </li>
+                </ul>
+                <div ng-controller="createSer">
+                    <p>255 的16进制是:</p>
+                    <h1>{{hex}}</h1>
+                </div>
+                <!-- <ul ng-controller="serHttp">
+                    <li ng-repeat="x in names">
+                    {{ x.Name + ', ' + x.Country }}
+                    </li>
+                </ul> -->
+            </div>
+            <div class="col-xs-2"></div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/plugins/require.js"></script>
+    <script type="text/javascript">
+       require(["js/common.js"],function(){// 加载具体路径的时候，要.js
+          require(["app/demoRequire"]);//基于baseUrl
+       });
+    </script>
+  </body>
+</html>

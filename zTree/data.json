@@ -1,0 +1,17 @@
+[{
+    "name": "test3",
+    "open": true,
+    "children": [{
+        "name": "test3_1"
+    }, {
+        "name": "test3_2"
+    }]
+}, {
+    "name": "test4",
+    "open": true,
+    "children": [{
+        "name": "test4_1"
+    }, {
+        "name": "test4_2"
+    }]
+}]

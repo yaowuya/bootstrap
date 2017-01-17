@@ -1,0 +1,45 @@
+// 模块加载配置
+require.config({
+   baseUrl:'./js',
+   paths:{
+      "jquery":"plugins/jquery-3.1.1.min",
+      "bootstrap":"plugins/bootstrap.min",
+      "angular":"plugins/angular-1.3.0",
+      "bootstrapTable":"plugins/bootstrap-table.min",
+      "bootstrapZhCN":"plugins/bootstrap-table-zh-CN",
+      "bootstrapExport":"plugins/bootstrap-table-export",
+      "tableExport":"plugins/tableExport",
+      "fileSave":"plugins/FileSaver.min",
+      "bootstrapEditable":"plugins/bootstrap-table-editable",
+      "Editable":"plugins/bootstrap-editable",
+      'contextMenu':'plugins/bootstrap-table-contextmenu',//右键菜单
+      "table":"app/table"
+   },
+   shim:{
+      "bootstrap":{
+         deps:['jquery']
+      },
+      "bootstrapTable":{
+         deps:['bootstrap']
+      },
+      "bootstrapZhCN":{
+         deps:['bootstrapTable']
+      },
+      "bootstrapExport":{
+         deps:['bootstrapTable']
+      },
+      "tableExport":{
+         deps:['bootstrapTable']
+      },
+      "bootstrapEditable":{
+         deps:['bootstrapTable']
+      },
+      "Editable":{
+         deps:['bootstrapTable']
+      },
+      'contextMenu':{
+         deps:['bootstrapTable']
+      }
+   }
+});
+//   exports:"Category"  //暴露出一个方法

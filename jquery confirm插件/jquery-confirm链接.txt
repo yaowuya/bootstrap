@@ -1,0 +1,3 @@
+http://craftpip.github.io/jquery-confirm/#quickfeatures
+
+http://www.jq22.com/demo/jqueryConfirm20160413/#api-target

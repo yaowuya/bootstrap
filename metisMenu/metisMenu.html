@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible"content="IE=edge">
+        <title>metisMenu</title>
+        <link rel="stylesheet"type="text/css"href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="css/metisMenu.css" />
+        <link rel="stylesheet" type="text/css" href="css/metisFolder.css" />
+        <style type="text/css">
+                        ul{
+                                                    list-style: none;
+                                                }
+                            li{
+                                                    list-style: none;
+                                                }
+                        @media (min-width: 768px) {
+                        #menu li {
+                        position: relative;
+                        }
+                        #menu > li ul {
+                        position: absolute;
+                        left: 100%;
+                        top: 0;
+                        min-width: 200px;
+                        display: none;
+                        }
+                        #menu li:hover > ul,
+                        #menu li:hover > ul.collapse {
+                        display: block !important;
+                        height: auto !important;
+                        z-index: 1000;
+                        background: #444;
+                        visibility: visible;
+                        }
+                    }
+                    @media (max-width: 767px) {
+                section.content {
+                float: left;
+                width: 100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row"style="margin-top:50px;">
+                <div class="col-xs-2">
+                    <h3>Auto Collapse default</h3>
+                    <p>点击一个，其他的都闭合</p>
+                    <ul class="metismenu" id="menu">
+                        <li class="active">
+                            <a href="#" aria-expanded="true">
+                            <span class="sidebar-nav-item-icon fa fa-github fa-lg"></span>
+                            <span class="sidebar-nav-item">metisMenu</span>
+                            <span class="fa arrow"></span>
+                            </a>
+                            <ul aria-expanded="true">
+                                <li>
+                                    <a href="https://github.com/onokumus/metisMenu">
+                                    <span class="sidebar-nav-item-icon fa fa-code-fork"></span>
+                                    Fork
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/onokumus/metisMenu">
+                                    <span class="sidebar-nav-item-icon fa fa-star"></span>
+                                    Star
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/onokumus/metisMenu/issues">
+                                    <span class="sidebar-nav-item-icon fa fa-exclamation-triangle"></span>
+                                    Issues
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" aria-expanded="false">Menu 0 <span class="fa arrow"></span></a>
+                            <ul aria-expanded="false">
+                                <li><a href="#">item 0.1</a></li>
+                                <li><a href="#">item 0.2</a></li>
+                                <li><a href="http://onokumus.com">onokumus</a></li>
+                                <li><a href="#">item 0.4</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" aria-expanded="false">Menu 1 <span class="glyphicon arrow"></span></a>
+                            <ul aria-expanded="false">
+                                <li><a href="#">item 1.1</a></li>
+                                <li><a href="#">item 1.2</a></li>
+                                <li>
+                                    <a href="#" aria-expanded="false">Menu 1.3 <span class="fa plus-times"></span></a>
+                                    <ul aria-expanded="false">
+                                        <li><a href="#">item 1.3.1</a></li>
+                                        <li><a href="#">item 1.3.2</a></li>
+                                        <li><a href="#">item 1.3.3</a></li>
+                                        <li><a href="#">item 1.3.4</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">item 1.4</a></li>
+                                <li>
+                                    <a href="#" aria-expanded="false">Menu 1.5 <span class="fa plus-minus"></span></a>
+                                    <ul aria-expanded="false">
+                                        <li><a href="#">item 1.5.1</a></li>
+                                        <li><a href="#">item 1.5.2</a></li>
+                                        <li><a href="#">item 1.5.3</a></li>
+                                        <li><a href="#">item 1.5.4</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" aria-expanded="false">Menu 2 <span class="glyphicon arrow"></span></a>
+                            <ul aria-expanded="false">
+                                <li><a href="#">item 2.1</a></li>
+                                <li><a href="#">item 2.2</a></li>
+                                <li><a href="#">item 2.3</a></li>
+                                <li><a href="#">item 2.4</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-2">
+                    <h3>No Collapse</h3>
+                    <p>点击一个，其他的没反应</p>
+                    <ul class="metismenu" id="menu2">
+                        <li class="active">
+                            <a href="#" aria-expanded="true">Menu 0 <span class="fa arrow"></span></a>
+                            <ul aria-expanded="true">
+                                <li><a href="#">item 0.1</a></li>
+                                <li><a href="#">item 0.2</a></li>
+                                <li><a href="http://onokumus.com">onokumus</a></li>
+                                <li><a href="#">item 0.4</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" aria-expanded="false">Menu 1 <span class="glyphicon arrow"></span></a>
+                            <ul aria-expanded="false">
+                                <li><a href="#">item 1.1</a></li>
+                                <li><a href="#">item 1.2</a></li>
+                                <li>
+                                    <a href="#" aria-expanded="false">Menu 1.3 <span class="fa plus-times"></span></a>
+                                    <ul aria-expanded="false">
+                                        <li><a href="#">item 1.3.1</a></li>
+                                        <li><a href="#">item 1.3.2</a></li>
+                                        <li><a href="#">item 1.3.3</a></li>
+                                        <li><a href="#">item 1.3.4</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">item 1.4</a></li>
+                                <li>
+                                    <a href="#" aria-expanded="false">Menu 1.5 <span class="fa plus-minus"></span></a>
+                                    <ul aria-expanded="false">
+                                        <li><a href="#">item 1.5.1</a></li>
+                                        <li><a href="#">item 1.5.2</a></li>
+                                        <li><a href="#">item 1.5.3</a></li>
+                                        <li><a href="#">item 1.5.4</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" aria-expanded="false">Menu 2 <span class="glyphicon arrow"></span></a>
+                            <ul aria-expanded="false">
+                                <li><a href="#">item 2.1</a></li>
+                                <li><a href="#">item 2.2</a></li>
+                                <li><a href="#">item 2.3</a></li>
+                                <li><a href="#">item 2.4</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-2">
+                    <h3>Double Tap To Go</h3>
+                    <p>点击两次,会跳转</p>
+                    <ul class="metismenu" id="menu3">
+                        <li class="active">
+                            <a href="http://google.com" aria-expanded="true">Menu 0 <span class="fa arrow"></span></a>
+                            <ul aria-expanded="true">
+                                <li><a href="#">item 0.1</a></li>
+                                <li><a href="#">item 0.2</a></li>
+                                <li><a href="http://onokumus.com">onokumus</a></li>
+                                <li><a href="#">item 0.4</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="http://github.com" aria-expanded="false">Menu 1 <span class="glyphicon arrow"></span></a>
+                            <ul aria-expanded="false">
+                                <li><a href="#">item 1.1</a></li>
+                                <li><a href="#">item 1.2</a></li>
+                                <li>
+                                    <a href="#" aria-expanded="false">Menu 1.3 <span class="fa plus-times"></span></a>
+                                    <ul aria-expanded="false">
+                                        <li><a href="#">item 1.3.1</a></li>
+                                        <li><a href="#">item 1.3.2</a></li>
+                                        <li><a href="#">item 1.3.3</a></li>
+                                        <li><a href="#">item 1.3.4</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">item 1.4</a></li>
+                                <li>
+                                    <a href="#" aria-expanded="false">Menu 1.5 <span class="fa plus-minus"></span></a>
+                                    <ul aria-expanded="false">
+                                        <li><a href="#">item 1.5.1</a></li>
+                                        <li><a href="#">item 1.5.2</a></li>
+                                        <li><a href="#">item 1.5.3</a></li>
+                                        <li><a href="#">item 1.5.4</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="https://github.com/onokumus/metisMenu" aria-expanded="false">Menu 2 <span class="glyphicon arrow"></span></a>
+                            <ul>
+                                <li><a href="#">item 2.1</a></li>
+                                <li><a href="#">item 2.2</a></li>
+                                <li><a href="#">item 2.3</a></li>
+                                <li><a href="#">item 2.4</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-2">
+                    <h3>folder view</h3>
+                    <p>文件夹形式</p>
+                    <ul class="metisFolder">
+                        <li>
+                            <a href="#">
+                            <span class="fa fa-folder-o"></span>
+                            Root
+                            </a>
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                    <span class="fa fa-file"></span>
+                                    File 1
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                    <span class="fa fa-folder-o"></span>
+                                    Folder
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                            <span class="fa fa-file"></span>
+                                            File 1
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                            <span class="fa fa-folder-o"></span>
+                                            Folder
+                                            </a>
+                                            <ul>
+                                                <li>
+                                                    <a href="#">
+                                                    <span class="fa fa-file"></span>
+                                                    File 1
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                    <span class="fa fa-file-excel-o text-danger"></span>
+                                                    Excel
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                    <span class="fa fa-file-pdf-o"></span>
+                                                    PDF
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                            <span class="fa fa-file-pdf-o"></span>
+                                            PDF
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                            <span class="fa fa-folder-o"></span>
+                                            Folder
+                                            </a>
+                                            <ul>
+                                                <li>
+                                                    <a href="#">
+                                                    <span class="fa fa-file"></span>
+                                                    File 1
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                    <span class="fa fa-folder-o"></span>
+                                                    Folder
+                                                    </a>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#">
+                                                            <span class="fa fa-file"></span>
+                                                            File 1
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                            <span class="fa fa-file-excel-o text-danger"></span>
+                                                            Excel
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                            <span class="fa fa-file-pdf-o"></span>
+                                                            PDF
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                    <span class="fa fa-file-pdf-o"></span>
+                                                    PDF
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                            <span class="fa fa-file-pdf-o"></span>
+                                            PDF
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                            <span class="fa fa-file-pdf-o"></span>
+                                            PDF2
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                    <span class="fa fa-file-pdf-o"></span>
+                                    PDF
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+        <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/metisMenu.js"></script>
+        <script type="text/javascript">
+       $(document).ready(function() {
+            $("#menu").metisMenu();
+            $('#menu2').metisMenu({ toggle: false });
+            $('#menu3').metisMenu({ doubleTapToGo: true });
+            $('.metisFolder').metisMenu({
+                toggle: false
+            });
+            $('#menu4').metisMenu();
+                var $this = $('#menu4'),resizeTimer,self = this;
+                var initCollapse = function(el) {
+                    if ($(window).width() >= 768) {
+                    this.find('li').has('ul').children('a').off('click');
+                    }
+                };
+                $(window).resize(function() {
+                    clearTimeout(resizeTimer);
+                    resizeTimer = setTimeout(self.initCollapse($this), 250);
+                });
+            });
+        </script>
+    </body>
+</html>

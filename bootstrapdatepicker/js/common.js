@@ -1,0 +1,20 @@
+require.config({
+    baseUrl:'./js',
+    paths:{
+      'jquery':'plugins/jquery-3.1.1.min',
+      'bootstrap':'plugins/bootstrap.min',
+      'datepicker':'plugins/bootstrap-datetimepicker.min',
+      'dateLang':'plugins/bootstrap-datetimepicker.zh-CN'
+    },
+    shim:{
+      'bootstrap':{
+        deps:['jquery']
+      },
+      'datepicker':{
+        deps:['bootstrap']
+      },
+      'dateLang':{
+        deps:['datepicker']
+      },
+    }
+});
