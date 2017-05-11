@@ -13,7 +13,11 @@ require.config({
       "bootstrapEditable":"plugins/bootstrap-table-editable",
       "Editable":"plugins/bootstrap-editable",
       'contextMenu':'plugins/bootstrap-table-contextmenu',//右键菜单
-      "table":"app/table"
+      'jquerymigrate':'plugins/jquery-migrate-1.2.0',
+      "table":"app/table",
+      "FixTable":"app/FixTable",
+      "bootstrapfixed":"plugins/bootstrap-table-fixed-columns",
+      "fixedcolumns":"app/fixedcolumns",
    },
    shim:{
       "bootstrap":{
@@ -39,7 +43,14 @@ require.config({
       },
       'contextMenu':{
          deps:['bootstrapTable']
+      },
+      "jquerymigrate":{
+         deps:['jquery']
+      },
+      "bootstrapfixed":{
+         deps:['bootstrap','bootstrapTable','bootstrapZhCN']
       }
+
    }
 });
 //   exports:"Category"  //暴露出一个方法
