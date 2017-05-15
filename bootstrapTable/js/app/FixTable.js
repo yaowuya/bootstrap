@@ -14,7 +14,7 @@ define(['jquerymigrate'], function() {
      * @param {[type]} FixColumnNumber [int]
      * @param {[type]} width           [$(".bootstrap-table .fixed-table-body").width()]
      * @param {[type]} height          [$(".bootstrap-table .fixed-table-body").height()]
-     * 如果宽高好原table的框高不一致，会出错
+     * 如果宽高和原table的框高不一致，会出错
      */
     var FixTable = function(TableID, ColumnIndex, FixColumnNumber, width, height) {
         /// <summary>
@@ -36,7 +36,7 @@ define(['jquerymigrate'], function() {
         /// <param name="height" type="Number">
         ///     显示的高度
         /// </param>
-
+        width=width-17;
         //首先创建上面所诉的框架出来
         if ($("#" + TableID + "_tableLayout").length != 0) {
             $("#" + TableID + "_tableLayout").before($("#" + TableID));
@@ -91,7 +91,7 @@ define(['jquerymigrate'], function() {
         ColumnsWidthFix = browserMise(ColumnsNumberFix, ColumnsWidthFix);
 
         function browserMise(ColumnsNumber, ColumnsWidth) {
-            ColumnsWidth += 2;
+            ColumnsWidth += 1;
             if ($.browser.msie) {
                 switch ($.browser.version) {
                     case "7.0":
@@ -119,14 +119,14 @@ define(['jquerymigrate'], function() {
             "overflow": "hidden",
             "position": "absolute",
             "top": 0,
-            "left": ColumnsWidthFix + 2,
+            "left": ColumnsWidthFix,
             "z-index": "50",
-            "background-color": "Silver"
+            // "background-color": "Silver"
         });
         $("#" + TableID + "_tableFixClone").css({
             "position": "absolute",
             "top": 0,
-            "left": -(ColumnsWidthFix + 1),
+            "left": -ColumnsWidthFix,
             // "z-index": "50",
         });
         $("#" + TableID + "_tableHead").css({
@@ -134,21 +134,21 @@ define(['jquerymigrate'], function() {
             "width": width - 17,
             "position": "relative",
             "z-index": "45",
-            "background-color": "Silver"
+            // "background-color": "Silver"
         });
         $("#" + TableID + "_tableColumn").css({
             "overflow": "hidden",
             "height": height - 17,
             "position": "absolute",
             "top": 0,
-            "left": ColumnsWidthFix + 2,
+            "left": ColumnsWidthFix,
             "z-index": "40",
             "background-color": "Silver"
         });
         $("#" + TableID + "_tableColumnClone").css({
             "position": "absolute",
             "top": 0,
-            "left": -(ColumnsWidthFix + 1)
+            "left": -ColumnsWidthFix
         });
         $("#" + TableID + "_tableData").css({
             "overflow": "scroll",
@@ -163,10 +163,10 @@ define(['jquerymigrate'], function() {
             $("#" + TableID + "_tableHead").css("width", $("#" + TableID + "_tableFix table").width());
             $("#" + TableID + "_tableData").css("width", $("#" + TableID + "_tableFix table").width() + 17);
         }
-        if ($("#" + TableID + "_tableColumn").height() > $("#" + TableID + "_tableColumn table").height()) {
-            $("#" + TableID + "_tableColumn").css("height", $("#" + TableID + "_tableColumn table").height());
-            $("#" + TableID + "_tableData").css("height", $("#" + TableID + "_tableColumn table").height() + 17);
-        }
+        // if ($("#" + TableID + "_tableColumn").height() > $("#" + TableID + "_tableColumn table").height()) {
+        //     $("#" + TableID + "_tableColumn").css("height", $("#" + TableID + "_tableColumn table").height());
+        //     $("#" + TableID + "_tableData").css("height", $("#" + TableID + "_tableColumn table").height() + 17);
+        // }
 
 
         // $("#" + TableID + "_tableFix").offset($("#" + TableID + "_tableLayout").offset());
